@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+</head>
+<body>
+  <div class="text-gray-700 bg-cover bg-[url('https://images.pexels.com/photos/1323550/pexels-photo-1323550.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')]">
+    <nav class="fixed bg-white w-full z-10 border-b border-solid border-gray-300">
+      <div class="container mx-auto px-6 py-2 flex justify-between items-center">
+        <a href="#" class="font-bold text-2xl lg:text-4xl">
+          MACHINERY
+        </a>
+        <div class="block md:hidden">
+          <button class="flex items-center px-3 py-2 border rounded text-gray-500 boder-gray-600 hiver:text-gray-800">
+            <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://wwww.w3.org/2000/svg">
+              <title>Menu</title>
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+            </svg>
+          </button>
+        </div>
+        <div class="hidden md:block">
+          <ul class="inline-flex">
+            <li>
+              <a href="{% url 'index' %}" class="px-4 font-bold hover:text-gray-800">
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'problem_statement' %}" class="px-4 font-bold hover:text-gray-800">
+                Problem statement
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'model' %}" class="px-4 font-bold hover:text-gray-800">
+                Model
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'model_database' %}" class="px-4 font-bold hover:text-gray-800">
+                Model Database
+              </a>
+            </li>
+            {% if user.is_authenticated %}
+            <li>  
+                <a href="{% url 'logout' %}" class=" hover:text-gray-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
+                    </svg>
+                </a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <nav>
+
+      <section class="text-gray-600 body-font relative">
+        
+        <div class="container px-5 py-24 mx-auto">
+          <div class="flex flex-col text-center w-full mb-12">
+            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Model Analysis</h1>
+            <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Machine failure Prediction</p>
+          </div>
+          
+
+          <form method="post">
+            {% csrf_token %}
+          <div class="lg:w-1/2 md:w-2/3 mx-auto">
+            <div class="flex flex-wrap -m-2">
+              <div class="p-2 w-1/2">
+                <div class="relative">
+                  <label for="name" class="leading-7 text-sm text-gray-600">Air_temperature_K</label>
+                  <input type="number" id="name" name="Air_temperature_K" step="0.0001" placeholder="Enter your Air temperature" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                </div>
+              </div>
+              <div class="p-2 w-1/2">
+                <div class="relative">
+                  <label for="email" class="leading-7 text-sm text-gray-600">Process_temperature_K</label>
+                  <input type="number" placeholder="Enter Process temperature" step="0.0001" id="email" name="Process_temperature_K" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                </div>
+              </div>
+              <div class="p-2 w-1/2">
+                <div class="relative">
+                  <label for="name" class="leading-7 text-sm text-gray-600">Rotational_speed_rpm</label>
+                  <input type="number" id="name" placeholder="Enter Rotational speed rpm" step="0.0001" name="Rotational_speed_rpm" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                </div>
+              </div>
+              <div class="p-2 w-1/2">
+                <div class="relative">
+                  <label for="email" class="leading-7 text-sm text-gray-600">Torque_Nm</label>
+                  <input type="number" id="email" name="Torque_Nm" placeholder="Enter Torque_Nm" step="0.0001" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                </div>
+              </div>
+              <div class="p-2 w-1/2 mx-40">
+                <div class="relative">
+                  <label for="name" class="leading-7 text-sm text-gray-600">Tool_wear_min</label>
+                  <input type="number" id="name" name="Tool_wear_min" placeholder="Enter Tool_wear_min" step="0.0001" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                </div>
+              </div>
+              <input type="hidden" value="data" id="name" name="Failure_Type" placeholder="Enter Tool_wear_min" step="0.0001" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              
+              <div class="p-2 w-full">
+                <button type="submit" class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Submit</button>
+              </div>
+              {{ prediction_text }}
+          </div>
+        </div>
+      </form>
+      </section>
+</body>
+</html>

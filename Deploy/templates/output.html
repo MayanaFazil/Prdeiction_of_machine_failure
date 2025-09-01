@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="text-gray-700 bg-cover bg-[url('https://images.pexels.com/photos/1323550/pexels-photo-1323550.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')]">
+        <nav class="fixed bg-white w-full z-10 border-b border-solid border-gray-300">
+          <div class="container mx-auto px-6 py-2 flex justify-between items-center">
+            <a href="#" class="font-bold text-2xl lg:text-4xl">
+              MACHINERY
+            </a>
+            <div class="block md:hidden">
+              <button class="flex items-center px-3 py-2 border rounded text-gray-500 boder-gray-600 hiver:text-gray-800">
+                <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://wwww.w3.org/2000/svg">
+                  <title>Menu</title>
+                  <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                </svg>
+              </button>
+            </div>
+            <div class="hidden md:block">
+              <ul class="inline-flex">
+                <li>
+                  <a href="{% url 'index' %}" class="px-4 font-bold hover:text-gray-800">
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a href="{% url 'problem_statement' %}" class="px-4 font-bold hover:text-gray-800">
+                    Problem statement
+                  </a>
+                </li>
+                <li>
+                  <a href="{% url 'model' %}" class="px-4 font-bold hover:text-gray-800">
+                    Model
+                  </a>
+                </li>
+                <li>
+                  <a href="{% url 'model_database' %}" class="px-4 font-bold hover:text-gray-800">
+                    Model Database
+                  </a>
+                </li>
+                {% if user.is_authenticated %}
+                <li>  
+                    <a href="{% url 'logout' %}" class=" hover:text-gray-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
+                        </svg>
+                    </a>
+                </li>
+                {% endif %}
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <nav>
+
+{% if prediction_text == 'Heat Dissipation Failure' %}
+<div class="flex flex-col bg-white py-4 px-12">
+    <div class="py-4">
+        <div class="pl-[116px] pr-[205px] py-8">
+            <div class="text-7xl text-black">{{ prediction_text }}</div>
+            <div class="lead-xl font-light ">The Failure is  {{ prediction_text }}</div>
+        </div>
+    </div>
+<div class="flex flex-col px-20 md:px-10 md:flex-row items-center justify-center gap-6">
+    <div>
+        <img src="https://static.c.realme.com/IN/thread/1194998362030473216.jpg" alt="Featured Image 1" class="rounded-t-xl"/>
+        <div class="px-9 pt-10 pb-14 bg-red-800 rounded-b-lg">
+            <div class="text-white space-y-4">
+                <h3 class="text-xl font-bold lead-xl bold">{{ prediction_text }}</h3>
+                <div class="text-lg font-light">Heat Dissipation Failure refers to a condition in which a system or component fails due to an inability to effectively dissipate heat generated during its operation. This failure can occur in various mechanical and electronic systems, including computer CPUs and industrial machinery. When heat builds up beyond a certain threshold, it can lead to a range of problems, including reduced performance, overheating, and, in extreme cases, permanent damage. Effective heat dissipation solutions, such as cooling fans, heat sinks, and thermal management systems, are crucial in preventing Heat Dissipation Failures. Addressing this issue is vital for maintaining the reliability and longevity of such systems.</div>
+            </div>
+            <div class="flex justify-between pt-8">
+                <ul class="flex flex-col gap-y-2.5">
+                    <li class="flex space-x-3 text-white">
+                        <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/FFFFFF/checked--v1.png" alt="checked--v1" class="w-6 h-6"/>
+                        <span class="paragraph-l font-bold">Excessive Heat Buildup</span>
+                    </li>
+                        <li class="flex space-x-3 text-white">
+                         <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/FFFFFF/checked--v1.png" alt="checked--v1" class="w-6 h-6"/>
+                        <span class="paragraph-l font-bold">Reduced Performance</span>
+                    </li>
+                        <li class="flex space-x-3 text-white">
+                         <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/FFFFFF/checked--v1.png" alt="checked--v1" class="w-6 h-6"/>
+                        <span class="paragraph-l font-bold">Thermal Damage</span>
+                    </li>
+                    </li>
+                        <li class="flex space-x-3 text-white">
+                         <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/FFFFFF/checked--v1.png" alt="checked--v1" class="w-6 h-6"/>
+                        <span class="paragraph-l font-bold">Importance in Electronics:</span>
+                    </li>
+
+                </ul>
+                <div class="flex flex-col justify-end">
+                    <a href="#" class="py-3 px-6 bg-white text-primary-200 paragraph-m  rounded-full">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div> 
+    
+    </div> 
+</div>
+</div>
+{% elif prediction_text == 'No Failure' %}
+<div class="flex flex-col bg-white py-4 px-12">
+    <div class="py-4">
+        <div class="pl-[116px] pr-[205px] py-8">
+            <div class="text-7xl text-black">{{ prediction_text }}</div>
+            <div class="lead-xl font-light ">Your machine will be safe   {{ prediction_text }}</div>
+        </div>
+    </div>
+<div class="flex flex-col px-20 md:px-10 md:flex-row items-center justify-center gap-6">
+    <div>
+        <img src="https://images.pexels.com/photos/190539/pexels-photo-190539.jpeg?cs=srgb&dl=pexels-mike-bird-190539.jpg&fm=jpg" alt="Featured Image 1" class="rounded-t-xl"/>
+        <div class="px-9 pt-10 pb-14 bg-red-800 rounded-b-lg">
+            <div class="text-white space-y-4">
+                <h3 class="text-xl font-bold lead-xl bold">No failure</h3>
+                <div class="text-lg font-light">"No Failure" refers to a condition in which a system, process, or machine is operating as expected without any issues or malfunctions.</div>
+            </div>
+            <div class="flex justify-between pt-8">
+                <ul class="flex flex-col gap-y-2.5">
+                    <li class="flex space-x-3 text-white">
+                        <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/FFFFFF/checked--v1.png" alt="checked--v1" class="w-6 h-6"/>
+                        <span class="paragraph-l font-bold">Operations are smooth and uninterrupted, ensuring the efficiency and effectiveness of a system.</span>
+                    </li>
+                        <li class="flex space-x-3 text-white">
+                         <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/FFFFFF/checked--v1.png" alt="checked--v1" class="w-6 h-6"/>
+                        <span class="paragraph-l font-bold">There are no unexpected downtime or disruptions, allowing for consistent performance.</span>
+                    </li>
+                        <li class="flex space-x-3 text-white">
+                         <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/FFFFFF/checked--v1.png" alt="checked--v1" class="w-6 h-6"/>
+                        <span class="paragraph-l font-bold">No Failure" is a desired outcome in various industries, as it leads to increased productivity, cost savings, and customer satisfaction.</span>
+                    </li>
+                    
+                    
+                </ul>
+                <div class="flex flex-col justify-end">
+                    <a href="#" class="py-3 px-6 bg-white text-primary-200 paragraph-m  rounded-full">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div> 
+    
+    </div> 
+</div>
+</div>
+{% elif prediction_text == 'Overstrain Failure' %}
+<div class="flex flex-col bg-white py-4 px-12">
+    <div class="py-4">
+        <div class="pl-[116px] pr-[205px] py-8">
+            <div class="text-7xl text-black">{{ prediction_text }}</div>
+            <div class="lead-xl font-light ">The Failure is  {{ prediction_text }}</div>
+        </div>
+    </div>
+<div class="flex flex-col px-20 md:px-10 md:flex-row items-center justify-center gap-6">
+    <div>
+        <img src="data:image/jpeg;base64,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" alt="Featured Image 1" class="rounded-t-xl"/>
+        <div class="px-9 pt-10 pb-14 bg-red-800 rounded-b-lg">
+            <div class="text-white space-y-4">
+                <h3 class="text-xl font-bold lead-xl bold">{{ prediction_text }}</h3>
+                <div class="text-lg font-light">Overstrain Failure occurs when a mechanical component or material is subjected to stress levels beyond its designed limits. This excessive stress can result from factors such as overloading, sudden shocks, or sustained forces.
+
+                    This type of failure typically leads to deformation or structural damage in the affected component, making it unable to perform its intended function effectively. It's a common issue in engineering and structural design, and engineers often use safety margins to prevent overstrain failures.
+                    
+                    Preventing Overstrain Failure is crucial in industries where safety is paramount, such as aerospace and construction, as it can have catastrophic consequences if not properly addressed.
+                    
+                    Effective monitoring and inspection techniques are essential for identifying signs of overstrain in components, allowing for timely maintenance or replacement to prevent failure.
+                    
+                    Engineers employ various methods, including finite element analysis and stress testing, to assess and mitigate the risk of overstrain failure in critical structures and components.</div>
+            </div>
+            <div class="flex justify-between pt-8">
+                <ul class="flex flex-col gap-y-2.5">
+                    <li class="flex space-x-3 text-white">
+                        <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/FFFFFF/checked--v1.png" alt="checked--v1" class="w-6 h-6"/>
+                        <span class="paragraph-l font-bold">Excessive Stress Levels</span>
+                    </li>
+                        <li class="flex space-x-3 text-white">
+                         <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/FFFFFF/checked--v1.png" alt="checked--v1" class="w-6 h-6"/>
+                        <span class="paragraph-l font-bold">Deformation and Damage</span>
+                    </li>
+                        <li class="flex space-x-3 text-white">
+                         <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/FFFFFF/checked--v1.png" alt="checked--v1" class="w-6 h-6"/>
+                        <span class="paragraph-l font-bold">Safety Risks</span>
+                    </li>
+                    </li>
+                        <li class="flex space-x-3 text-white">
+                         <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/FFFFFF/checked--v1.png" alt="checked--v1" class="w-6 h-6"/>
+                        <span class="paragraph-l font-bold">Safety Margins</span>
+                    </li>
+                    </li>
+                        <li class="flex space-x-3 text-white">
+                         <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/FFFFFF/checked--v1.png" alt="checked--v1" class="w-6 h-6"/>
+                        <span class="paragraph-l font-bold">Monitoring and Inspection</span>
+                    </li>
+                </ul>
+                <div class="flex flex-col justify-end">
+                    <a href="#" class="py-3 px-6 bg-white text-primary-200 paragraph-m  rounded-full">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div> 
+    
+    </div> 
+</div>
+</div>
+{% elif prediction_text == 'Power Failure' %}
+<div class="flex flex-col bg-white py-4 px-12">
+    <div class="py-4">
+        <div class="pl-[116px] pr-[205px] py-8">
+            <div class="text-7xl text-black">{{ prediction_text }}</div>
+            <div class="lead-xl font-light ">The Failure is  {{ prediction_text }}</div>
+        </div>
+    </div>
+<div class="flex flex-col px-20 md:px-10 md:flex-row items-center justify-center gap-6">
+    <div>
+        <img src="https://www.circuits-diy.com/wp-content/uploads/2020/06/Power-Failure-Light-Circuit-using-AA-Battery.jpg" alt="Featured Image 1" class="rounded-t-xl"/>
+        <div class="px-9 pt-10 pb-14 bg-red-500 rounded-b-lg">
+            <div class="text-white space-y-4">
+                <h3 class="text-xl font-bold lead-xl bold">{{ prediction_text }}</h3>
+                <div class="text-lg font-light">"Power failure" refers to the sudden interruption or loss of electrical power supply in a specific area or facility. It can result from various causes, such as severe weather conditions like storms or hurricanes, equipment failures, grid overloads, or human errors. Power failures can have significant consequences, including disruptions in daily life, business operations, and critical infrastructure. To mitigate the impact of power failures, many organizations and individuals use backup power sources like generators and uninterruptible power supplies (UPS) to ensure continued functionality during outages. Ensuring a reliable power supply is crucial for modern society's functioning and the smooth operation of technology-dependent systems.</div>
+            </div>
+            <div class="flex justify-between pt-8">
+                <ul class="flex flex-col gap-y-2.5">
+                    <li class="flex space-x-3 text-white">
+                        <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/FFFFFF/checked--v1.png" alt="checked--v1" class="w-6 h-6"/>
+                        <span class="paragraph-l font-bold">Electrical Grid Vulnerabilities</span>
+                    </li>
+                        <li class="flex space-x-3 text-white">
+                         <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/FFFFFF/checked--v1.png" alt="checked--v1" class="w-6 h-6"/>
+                        <span class="paragraph-l font-bold">Backup Power Sources:</span>
+                    </li>
+                        <li class="flex space-x-3 text-white">
+                         <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/FFFFFF/checked--v1.png" alt="checked--v1" class="w-6 h-6"/>
+                        <span class="paragraph-l font-bold">Preventive Maintenance</span>
+                    </li>
+                    </li>
+                        <li class="flex space-x-3 text-white">
+                         <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/FFFFFF/checked--v1.png" alt="checked--v1" class="w-6 h-6"/>
+                        <span class="paragraph-l font-bold">Emergency Response Plan</span>
+                    </li>
+                    </li>
+                        <li class="flex space-x-3 text-white">
+                         <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/FFFFFF/checked--v1.png" alt="checked--v1" class="w-6 h-6"/>
+                        <span class="paragraph-l font-bold">Energy Efficiency</span>
+                    </li>
+                    
+                </ul>
+                <div class="flex flex-col justify-end">
+                    <a href="#" class="py-3 px-6 bg-white text-primary-200 paragraph-m  rounded-full">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div> 
+    
+    </div> 
+</div>
+</div>
+{% elif prediction_text == 'Random Failures' %}
+<div class="flex flex-col bg-white py-4 px-12">
+    <div class="py-4">
+        <div class="pl-[116px] pr-[205px] py-8">
+            <div class="text-7xl text-black">{{ prediction_text }}</div>
+            <div class="lead-xl font-light ">The Failure is  {{ prediction_text }}</div>
+        </div>
+    </div>
+<div class="flex flex-col px-20 md:px-10 md:flex-row items-center justify-center gap-6">
+    <div>
+        <img src="https://www.shutterstock.com/shutterstock/photos/785685529/display_1500/stock-photo-sparks-flying-while-machine-griding-and-finishing-metal-785685529.jpg" alt="Featured Image 1" class="rounded-t-xl"/>
+        <div class="px-9 pt-10 pb-14 bg-red-800 rounded-b-lg">
+            <div class="text-white space-y-4">
+                <h3 class="text-xl font-bold lead-xl bold">{{ prediction_text }}</h3>
+                <div class="text-lg font-light">Random failures are unexpected events that occur without a discernible pattern or predictability, making them challenging to anticipate. They can affect various systems and processes, from machinery to software applications. These failures often result from a combination of unforeseen factors and can be difficult to reproduce or analyze systematically. Mitigating random failures typically involves robust testing, redundancy, and continuous monitoring to minimize their impact. In complex systems, understanding and addressing random failures is crucial for ensuring reliability and minimizing downtime.</div>
+            </div>
+            <div class="flex justify-between pt-8">
+                <ul class="flex flex-col gap-y-2.5">
+                    <li class="flex space-x-3 text-white">
+                        <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/FFFFFF/checked--v1.png" alt="checked--v1" class="w-6 h-6"/>
+                        <span class="paragraph-l font-bold">Intermittent Nature</span>
+                    </li>
+                        <li class="flex space-x-3 text-white">
+                         <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/FFFFFF/checked--v1.png" alt="checked--v1" class="w-6 h-6"/>
+                        <span class="paragraph-l font-bold">No Clear Pattern</span>
+                    </li>
+                        <li class="flex space-x-3 text-white">
+                         <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/FFFFFF/checked--v1.png" alt="checked--v1" class="w-6 h-6"/>
+                        <span class="paragraph-l font-bold">Stochastic Factors</span>
+                    </li>
+                    </li>
+                        <li class="flex space-x-3 text-white">
+                         <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/FFFFFF/checked--v1.png" alt="checked--v1" class="w-6 h-6"/>
+                        <span class="paragraph-l font-bold">Statistical Analysis</span>
+                    </li>
+                    </li>
+                        <li class="flex space-x-3 text-white">
+                         <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/FFFFFF/checked--v1.png" alt="checked--v1" class="w-6 h-6"/>
+                        <span class="paragraph-l font-bold">Mitigation Strategies</span>
+                    </li>
+                    </li>
+                        <li class="flex space-x-3 text-white">
+                         <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/FFFFFF/checked--v1.png" alt="checked--v1" class="w-6 h-6"/>
+                        <span class="paragraph-l font-bold">Stochastic Factors</span>
+                    </li>
+                </ul>
+                <div class="flex flex-col justify-end">
+                    <a href="#" class="py-3 px-6 bg-white text-primary-200 paragraph-m  rounded-full">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div> 
+    
+    </div> 
+</div>
+</div>
+{% elif prediction_text == 'Tool Wear Failure' %}
+<div class="flex flex-col bg-white py-4 px-12">
+    <div class="py-4">
+        <div class="pl-[116px] pr-[205px] py-8">
+            <div class="text-7xl text-black">{{ prediction_text }}</div>
+            <div class="lead-xl font-light ">The Failure is  {{ prediction_text }}</div>
+        </div>
+    </div>
+<div class="flex flex-col px-20 md:px-10 md:flex-row items-center justify-center gap-6">
+    <div>
+        <img src="https://www.shutterstock.com/shutterstock/photos/1772384783/display_1500/stock-photo-metal-machine-tools-industry-cnc-turning-machine-high-speed-cutting-is-operation-flying-sparks-of-1772384783.jpg" alt="Featured Image 1" class="rounded-t-xl"/>
+        <div class="px-9 pt-10 pb-14 bg-red-800 rounded-b-lg">
+            <div class="text-white space-y-4">
+                <h3 class="text-xl font-bold lead-xl bold">{{ prediction_text }}</h3>
+                <div class="text-lg font-light">Tool wear failure is a common issue in machining and manufacturing processes. It occurs when cutting tools used in machinery gradually deteriorate over time due to friction and abrasive forces. As the tool wears down, it can lead to decreased machining precision and increased production costs. Detecting tool wear early is crucial to prevent costly damage to workpieces and equipment. Monitoring techniques, such as vibration analysis and tool wear sensors, are employed to identify and address tool wear failures promptly. Preventive maintenance and tool replacement strategies are often employed to minimize the impact of tool wear on production processes.</div>
+            </div>
+            <div class="flex justify-between pt-8">
+                <ul class="flex flex-col gap-y-2.5">
+                    <li class="flex space-x-3 text-white">
+                        <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/FFFFFF/checked--v1.png" alt="checked--v1" class="w-6 h-6"/>
+                        <span class="paragraph-l font-bold">Increased Cutting Resistance</span>
+                    </li>
+                        <li class="flex space-x-3 text-white">
+                         <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/FFFFFF/checked--v1.png" alt="checked--v1" class="w-6 h-6"/>
+                        <span class="paragraph-l font-bold">Poor Surface Finish</span>
+                    </li>
+                        <li class="flex space-x-3 text-white">
+                         <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/FFFFFF/checked--v1.png" alt="checked--v1" class="w-6 h-6"/>
+                        <span class="paragraph-l font-bold">Inconsistent Dimensions</span>
+                    </li>
+                    </li>
+                        <li class="flex space-x-3 text-white">
+                         <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/FFFFFF/checked--v1.png" alt="checked--v1" class="w-6 h-6"/>
+                        <span class="paragraph-l font-bold">Increased Noise and Vibration</span>
+                    </li>
+                    </li>
+                        <li class="flex space-x-3 text-white">
+                         <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/FFFFFF/checked--v1.png" alt="checked--v1" class="w-6 h-6"/>
+                        <span class="paragraph-l font-bold">Shortened Tool Life</span>
+                    </li>
+                </ul>
+                <div class="flex flex-col justify-end">
+                    <a href="#" class="py-3 px-6 bg-white text-primary-200 paragraph-m  rounded-full">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div> 
+    
+    </div> 
+</div>
+</div>
+
+
+{% endif %}
+</body>
+</html>
